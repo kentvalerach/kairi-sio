@@ -178,8 +178,8 @@ kairi-sio/
 Full technical documentation available in three languages:
 
 - 🇪🇸 [Documentación Técnica](docs/arquitectura/KAIRI_SIO_Documentacion_Tecnica_v1.1.md)
-- 🇬🇧 [Technical Documentation](docs/arquitectura/KAIRI_SIO_Technical_Documentation_v1.1_EN (1).md)
-- 🇩🇪 [Technische Dokumentation](docs/arquitectura/KAIRI_SIO_Technische_Dokumentation_v1.1_DE (1).md)
+- 🇬🇧 [Technical Documentation](docs/arquitectura/KAIRI_SIO_Technical_Documentation_v1.1_EN(1).md)
+- 🇩🇪 [Technische Dokumentation](docs/arquitectura/KAIRI_SIO_Technische_Dokumentation_v1.1_DE(1).md)
 
 ---
 
