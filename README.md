@@ -7,7 +7,7 @@ Sistema de Verificación de Integridad de Señal Hidrológica
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green)](https://fastapi.tiangolo.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.41-red)](https://streamlit.io)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-ff4b4b?logo=streamlit)](https://kairi-sio-represas.streamlit.app/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
 
 ---
 
