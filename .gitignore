@@ -1,0 +1,67 @@
+﻿# KAIRI-SIO — .gitignore
+# Repositorio público — excluye credenciales, entornos y archivos pesados
+
+# ── CREDENCIALES — NUNCA en repo ─────────────────────────────────────────────
+.env
+.env.local
+.env.txt
+src/config/secrets.py
+docs/api_keys/
+
+# ── Entorno virtual Python ────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# ── IDEs ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Datos crudos pesados (no reproducibles públicamente) ─────────────────────
+# XLSX y CSV originales SAIH — pesados, no públicos
+data/raw/saih_guadalquivir/**/*.xlsx
+data/raw/saih_ebro/**/*.csv
+
+# Shapefiles índices binarios (no necesarios, regenerables por QGIS)
+data/raw/cartografia_snczi/**/*.sbn
+data/raw/cartografia_snczi/**/*.sbx
+03_Datos_Fuentes_Oficiales/**/*.sbn
+03_Datos_Fuentes_Oficiales/**/*.sbx
+
+# ── Fuentes oficiales — archivos raster pesados ───────────────────────────────
+# TIF raster CAUMAX (>500MB total)
+03_Datos_Fuentes_Oficiales/Caumax_Nacional/Caumax/data/*.tif
+03_Datos_Fuentes_Oficiales/Caumax_Nacional/Caumax/data/*.tif
+# MDT ASC (modelos digitales del terreno, archivos grandes)
+03_Datos_Fuentes_Oficiales/MDT/**/*.asc
+data/raw/mdt/**/*.asc
+
+# ── Logs y outputs forenses ───────────────────────────────────────────────────
+output/forensics/*.jsonl
+output/forensics/*.csv
+_setup_log.txt
+*.log
+
+# ── Temporales ────────────────────────────────────────────────────────────────
+*.tmp
+*.bak
+*.orig
+saih_ebro_reader_fix.py
+
+# ── NOTA: data/curated/ y data/analytic/ SÍ se incluyen ─────────────────────
+# Los parquets scored son necesarios para que el dashboard funcione
+# sin ejecutar el pipeline completo (demo institucional)

@@ -1,0 +1,22 @@
+KAIRI-SIO — Experimento Validación Intercuencas
+============================================================
+Fecha: 2026-03-13
+
+HIPÓTESIS: El modelo detecta anomalías independientemente de la cuenca.
+
+TEST 3 — Kolmogorov-Smirnov:
+  ks_stat: 0.3329
+  p_value: 0.0
+  n_CHG: 260841
+  n_CHE: 105017
+  mean_CHG: 0.892
+  mean_CHE: 0.8412
+  interpretacion: Las distribuciones difieren significativamente (p=0.0000) — analizar causa
+
+TEST 2 — Detección Flatlines (sobre datos reales):
+  CHG_Guadalquivir / E32_VADOMOJON: S_f_mean=1.0000 n_flat=0 (0.0%) n_critical=0 (0.0%)
+  CHG_Guadalquivir / E33_SRRA_BOYERA: S_f_mean=1.0000 n_flat=0 (0.0%) n_critical=0 (0.0%)
+  CHG_Guadalquivir / E37_BEMBEZAR: S_f_mean=1.0000 n_flat=0 (0.0%) n_critical=0 (0.0%)
+  CHE_Ebro / ITOIZ: S_f_mean=1.0000 n_flat=0 (0.0%) n_critical=0 (0.0%)
+  CHE_Ebro / MEQUINENZA: S_f_mean=1.0000 n_flat=0 (0.0%) n_critical=0 (0.0%)
+  CHE_Ebro / YESA: S_f_mean=1.0000 n_flat=0 (0.0%) n_critical=0 (0.0%)

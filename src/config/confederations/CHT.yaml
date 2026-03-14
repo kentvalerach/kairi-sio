@@ -1,0 +1,38 @@
+# KAIRI-SIO — Confederación Hidrográfica del Tajo
+# Estado: PLACEHOLDER — pendiente datos técnicos CHT
+
+confederation:
+  code: CHT
+  name: Confederación Hidrográfica del Tajo
+  status: placeholder
+
+weights:
+  w_f: 0.40
+  w_l: 0.30
+  w_t: 0.20
+  w_h: 0.10
+
+thresholds:
+  certificada: 0.85
+  degradada:   0.50
+
+latency:
+  breakpoints_s: [60, 300, 900]
+  scores:        [1.0, 0.7, 0.4, 0.1]
+  critical_s:    900
+
+gaps:
+  warn: 0.10
+  fail: 0.30
+
+flatline:
+  k_hours:        8
+  critical_hours: 48
+
+drift:
+  threshold: 3.0
+
+spike:
+  h_level_m_per_h: 1.0
+
+embalses: {}

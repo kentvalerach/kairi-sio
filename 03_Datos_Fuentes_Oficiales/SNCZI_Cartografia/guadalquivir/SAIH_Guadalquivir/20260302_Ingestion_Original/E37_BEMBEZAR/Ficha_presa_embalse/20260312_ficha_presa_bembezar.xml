@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40"
+xmlns:u1="urn:schemas-microsoft-com:office:excel">
+ <Styles>
+ <Style ss:ID="Default" ss:Name="Normal">
+ <Alignment ss:Vertical="Bottom"/>
+ <Borders/>
+ <Font/>
+ <Interior/>
+ <NumberFormat/>
+ <Protection/>
+ </Style>
+ <Style ss:ID="BoldColumn">
+ <Font x:Family="Swiss" ss:Bold="1"/>
+ </Style>
+ <Style ss:ID="StringLiteral">
+ <NumberFormat ss:Format="@"/>
+ </Style>
+ <Style ss:ID="Decimal">
+ <NumberFormat ss:Format="0.0000"/>
+ </Style>
+ <Style ss:ID="Integer">
+ <NumberFormat ss:Format="0"/>
+ </Style>
+ <Style ss:ID="DateLiteral">
+ <NumberFormat ss:Format="mm/dd/yyyy;@"/>
+ </Style>
+ <Style ss:ID="Negrita"><Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/><Font x:Family="Swiss" ss:Size="14" ss:Bold="1"/></Style>
+</Styles>
+<Worksheet ss:Name="Hoja 1">
+<Table>
+<Row ss:Height="18">
+<Cell ss:MergeAcross="9" ss:StyleID="Negrita"><Data ss:Type="String">eGISPE: Ficha Técnica de Presa</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Nombre de la presa:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Otro Nombre:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Fase vida presa:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Proyectista:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Categoría en función del riesgo potencial:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Aprobación de las normas de explotación:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Aprobación del plan de emergencia:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Fecha de finalización de las obras:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Río en el que se encuentra la presa:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Municipio:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Cuenca hidrográfica:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Provincia:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Coordenadas UTM 30 - ETRS 89:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Usuarios:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Tipos:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Superficie de la cuenca hidrográfica (km2):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Aportación media anual (hm3):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Precipitación media anual (mm):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Caudal punta avenida de proyecto (m3/s):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Superficie del embalse a NMN (ha):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Capacidad a NMN (hm3):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Cota del NMN (m):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Tipo de presa:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Cota coronación (m):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Altura desde cimientos (m):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Longitud de coronación (m):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Cota cimentación (m):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Cota del cauce en la presa (m):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Volumen del cuerpo presa (1000 m3):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Número total de aliviaderos en la presa:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Regulación:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Capacidad a NAE (m3/s):]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Número total de desagües en la presa:]]></Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String"><![CDATA[Capacidad (m3/s): ]]></Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[BEMBEZAR]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[Explotación]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[J- VIGUERAS]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[A]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[31-12-1963]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[BEMBÉZAR]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[Hornachuelos]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[GUADALQUIVIR]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[Córdoba]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[305.652,000 -   4.197.222,000]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[ZR del Bembezar, Consorcio Abto Ecija, Palma del Rio y Peñaflor, Abto Hornachuelos, ---, ---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[Riego, Abastecimiento, Defensa frente avenidas, Ganadero]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[1.198,000]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[327,980]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[182,500]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[Gravedad (hormigón vibrado)]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[185,000]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[99,000]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[277]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[86,000]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[513,320]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[1]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[Compuertas]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[---]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[2]]></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"><![CDATA[73,000]]></Data></Cell>
+</Row>
+</Table>
+ </Worksheet>
+</Workbook>

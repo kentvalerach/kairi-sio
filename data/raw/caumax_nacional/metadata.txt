@@ -1,0 +1,16 @@
+[general]
+name=Mapa de Caudales Máximos. Caumax versión 3.0
+qgisMinimumVersion=3.0
+description=Aplicación sobre SIG para la consulta del mapa de caudales máximos
+version=3.0	
+about=El principal objetivo de la presente aplicación informática es facilitar la consulta de la información contenida en el mapa de caudales máximos. Dicho mapa abarca el ámbito territorial de las demarcaciones hidrográficas con cuencas intercomunitarias. El mapa de caudales máximos fue elaborado por el Centro de Estudios Hidrográficos del CEDEX en el año 2011 (2009 para la cuenca del Tajo), por encargo de la Dirección General del Agua.<br>
+	Junto con las herramientas para facilitar la consulta del mapa de caudales máximos se incluye una herramienta que puede servir de ayuda para realizar estimaciones de los caudales de avenida en aquellos puntos de la red fluvial que, por tener una cuenca vertiente inferior a 50 km², no están incluidos en el mapa. Esta herramienta permite aplicar el método racional modificado de Témez obteniendo las variables necesarias de forma automática a partir de las coberturas incluidas en la aplicación informática.<br>
+	La presente versión de la aplicación sobre QGIS procede de la versión anterior de Caumax 2.3, desarrollada por el Centro de Estudios Hidrográficos del CEDEX sobre gvSIG. La migración de Caumax de gvSIG a QGIS ha sido encargada por la Dirección General del Agua del Ministerio para la Transición Ecológica y el Reto Demográfico a Tragsatec, y ha sido dirigida y supervisada por el Centro de Estudios Hidrográficos del CEDEX.  
+		
+
+tags=Caumax, Hidrología, Caudales máximos, Avenidas, Red hidrográfica, Sistema Nacional de Cartografía de Zonas Inundables
+icon=resources/cedex_icon512.png
+homepage=https://www.miteco.gob.es/es/agua/temas/gestion-de-los-riesgos-de-inundacion/snczi/Mapa-de-caudales-maximos/
+
+
+

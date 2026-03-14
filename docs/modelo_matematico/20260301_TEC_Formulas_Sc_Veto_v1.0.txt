@@ -1,0 +1,233 @@
+KAIRI-SIO_Bloque2_Formulas_Sc_y_Veto_v1.0.txt
+Proyecto: KAIRI-SIO
+Bloque: 2 — Núcleo Matemático (Determinista, Auditable)
+Versión: v1.0
+Fecha: 2026-03-01
+Autoría: Equipo KAIRI (Reymar + Ken)
+
+=====================================================================
+0) OBJETIVO DEL BLOQUE
+Calcular un Scoring de Confianza S_c(t) ∈ [0,1] para cada sensor y timestamp,
+y aplicar un Motor de Veto basado en umbrales, generando además un registro
+forense reproducible por decisión.
+
+KAIRI no controla infraestructuras. KAIRI certifica señal.
+
+=====================================================================
+1) NOTACIÓN Y ESTRUCTURA DE DATOS (MVP)
+
+Para cada timestamp t y sensor s, definimos un registro de observación:
+
+Obs(s,t) = {
+  ts_sensor,         # timestamp reportado por sensor (si existe)
+  ts_ingest,         # timestamp de llegada a KAIRI
+  H,                 # nivel (m) si aplica
+  Q_in,              # caudal entrante (m3/s) si aplica
+  Q_out,             # caudal saliente (m3/s) si aplica
+  P,                 # precipitación (mm) en ventana Δt
+  T_air,             # temperatura aire (°C) opcional
+  ...                # extensible
+}
+
+Convención de faltantes:
+- Dato faltante = None (nunca 0.0 por defecto)
+
+Ventanas:
+- Δt_base = 15 min (preferido si SAIH 15-min)
+- Ventana corta W1 = 1h
+- Ventana media W6 = 6h
+- Ventana larga W24 = 24h
+
+=====================================================================
+2) SCORE GLOBAL
+S_c(s,t) = clamp01( w_f*S_f(s,t) + w_l*S_l(s,t) + w_t*S_t(s,t) + w_h*S_h(s,t) )
+
+Pesos iniciales MVP (ajustables):
+w_f = 0.40   (integridad física)
+w_l = 0.30   (coherencia lógica multivariante)
+w_t = 0.20   (calidad temporal / transmisión)
+w_h = 0.10   (salud histórica del sensor)
+
+clamp01(z) = min(1, max(0, z))
+
+=====================================================================
+3) S_f — INTEGRIDAD FÍSICA (DETERMINISTA)
+S_f(s,t) ∈ {0,1} inicialmente (MVP), luego puede suavizarse.
+
+Para una variable x (ej. H o Q_in):
+- Rango físico duro: x_min ≤ x ≤ x_max
+- Saturación de escala (si se conoce): x != x_sat_constante repetida excesivamente
+- No-negatividad si aplica: Q_in ≥ 0, P ≥ 0
+- Cota coronación (si disponible): H ≤ H_crest + tol
+
+Definimos flags:
+F_range = 1 si (x dentro de rango), si no 0
+F_nan   = 0 si x es None; 1 si existe
+F_neg   = 0 si valor imposible (ej. Q<0), 1 si ok
+
+MVP:
+S_f = F_nan * F_range * F_neg
+
+Notas:
+- x_min/x_max se definen por tipo de sensor + metadatos de estación/presa.
+- Si no hay metadatos aún, usar rangos conservadores y marcar "CONFIG_PENDING".
+
+=====================================================================
+4) S_t — INTEGRIDAD TEMPORAL (LATENCIA + GAPS)
+S_t(s,t) ∈ [0,1]
+
+4.1 Latencia
+lat(s,t) = (ts_ingest - ts_sensor) en segundos
+Si ts_sensor no existe, usar lat = (ts_ingest - t) respecto al grid esperado.
+
+Función de penalización (piecewise):
+L(lat) =
+  1.0                si lat ≤ 60s
+  0.7                si 60s < lat ≤ 300s
+  0.4                si 300s < lat ≤ 900s
+  0.1                si lat > 900s
+
+4.2 Gaps en ventana corta (última hora)
+gap_rate_W1 = (#observaciones faltantes en W1) / (#esperadas en W1)
+
+Penalización:
+G(gap_rate) = 1 - gap_rate
+
+MVP:
+S_t = L(lat) * G(gap_rate_W1)
+
+=====================================================================
+5) S_l — COHERENCIA LÓGICA MULTIVARIANTE
+S_l(s,t) ∈ [0,1]
+Objetivo: detectar incoherencias entre variables (P, H, Q_in/Q_out) y dinámica esperable.
+
+5.1 Coherencia lluvia → cambio de nivel (P vs ΔH)
+Definimos:
+ΔH_1h = H(t) - H(t-1h)
+
+Regla básica:
+- Si P_1h = 0 (o muy baja) y ΔH_1h es grande positivo, incoherencia probable.
+- Si P_1h es alta y ΔH_1h no responde nada, posible fallo de sensor H o P (según contexto).
+
+Umbrales MVP (ajustables por presa):
+eps_H = percentil_99(|ΔH_1h|) histórico del sensor (si hay histórico) o valor fijo conservador.
+P_min = 1 mm (umbral lluvia significativa)
+
+Definimos penalización:
+C_PH =
+  1.0  si (P_1h ≥ P_min) o (|ΔH_1h| ≤ eps_H)
+  0.4  si (P_1h < P_min) y (ΔH_1h > eps_H)
+  0.7  si (P_1h < P_min) y (ΔH_1h < -eps_H)   # puede ser desembalse real
+
+5.2 Coherencia caudal → cambio de almacenamiento
+Aproximación conceptual (sin curva cota-volumen aún):
+Si H sube fuerte pero (Q_in - Q_out) ~ 0 durante W1, incoherencia.
+
+Definimos:
+ΔQ_1h = (median(Q_in - Q_out) en W1)
+
+Regla MVP:
+C_QH =
+  1.0 si (ΔH_1h y ΔQ_1h son coherentes en signo)
+  0.5 si incoherentes o falta una variable
+
+5.3 Coherencia estadística simple (z-score robusto)
+Para variable x:
+z = |x - median_W24(x)| / (MAD_W24(x) + 1e-6)
+
+Penalización:
+C_z =
+  1.0 si z ≤ 3
+  0.7 si 3 < z ≤ 6
+  0.3 si z > 6
+
+MVP:
+S_l = min( C_PH, C_QH, C_z )
+
+=====================================================================
+6) S_h — SALUD HISTÓRICA DEL SENSOR (PROXY MVP)
+S_h(s,t) ∈ [0,1]
+En MVP NO usamos Weibull todavía. Usamos proxies auditable-simple:
+
+Componentes:
+- gap_rate_W24  (faltantes en 24h)
+- flatline_rate_W24  (% de lecturas idénticas consecutivas excesivas)
+- drift_score  (tendencia anómala)
+
+6.1 Flatline
+flatline_rate_W24 = (#veces x(t)=x(t-Δt) por >K consecutivas) / N
+K recomendado MVP: 8 (si Δt=15min => 2h)
+
+Penalización:
+F_flat = 1 - min(1, flatline_rate_W24)
+
+6.2 Drift (tendencia lenta)
+drift = |EMA_6h(x) - EMA_24h(x)| / (std_W24(x)+1e-6)
+Penalización:
+F_drift =
+  1.0 si drift ≤ 1
+  0.7 si 1 < drift ≤ 2
+  0.4 si drift > 2
+
+6.3 Gaps largos
+F_gap = 1 - gap_rate_W24
+
+MVP:
+S_h = clamp01( 0.4*F_gap + 0.3*F_flat + 0.3*F_drift )
+
+=====================================================================
+7) MOTOR DE VETO (DECISIÓN OPERATIVA)
+decision(s,t) según S_c y banderas críticas:
+
+- CRITICAL_FLAG si:
+  * S_f = 0 (imposible físico o None)
+  * timestamp incoherente (ts retrocede) o latencia extrema > 900s
+  * incoherencia lógica severa (C_PH = 0.4 y z>6 simultáneo)
+
+Reglas:
+Si CRITICAL_FLAG = True => Nivel 2 (VETO)
+Sino:
+  Si S_c ≥ 0.85 => Nivel 0 (CERTIFICADA)
+  Si 0.50 ≤ S_c < 0.85 => Nivel 1 (DEGRADADA / AVISO TÉCNICO)
+  Si S_c < 0.50 => Nivel 2 (VETO)
+
+Acción por nivel:
+- Nivel 0: se permite propagación interna (y futura externa si aplica)
+- Nivel 1: no se genera alerta externa; se genera ticket técnico de revisión
+- Nivel 2: bloqueo de alertas externas + registro forense reforzado
+
+=====================================================================
+8) REGISTRO FORENSE (JSONL APPEND-ONLY)
+Por cada decisión generar un evento forense:
+
+event = {
+  "uuid": UUIDv4,
+  "ts_ingest": ISO8601,
+  "sensor_id": "...",
+  "window": {"W1":"1h","W24":"24h"},
+  "scores": {"S_c":..., "S_f":..., "S_l":..., "S_t":..., "S_h":...},
+  "components": {"C_PH":..., "C_QH":..., "C_z":..., "lat_s":..., "gap_rate_W1":..., "gap_rate_W24":...},
+  "decision": "CERTIFICADA|DEGRADADA|VETADA",
+  "reasons": ["...","..."],    # lista de motivos humanos y auditables
+  "model_version": "kairi-sio-sc-v0.2.0",
+  "code_hash": "<git_commit_hash>",
+  "data_hash": "<sha256 de la ventana de datos usada>"
+}
+
+- code_hash = hash del commit del repo en ese momento (git rev-parse HEAD)
+- data_hash = sha256 sobre serialización estable (ej. CSV ordenado) de la ventana W1/W24
+
+=====================================================================
+9) OUTPUTS MVP (ENTREGABLES)
+1) CSV/Parquet con columnas:
+   ts, sensor_id, S_c, S_f, S_l, S_t, S_h, decision
+2) JSONL forense con event por fila (append-only)
+
+=====================================================================
+10) NOTAS DE IMPLEMENTACIÓN PYTHON
+- Usar pandas para time-index y ventanas.
+- Usar median y MAD (stats robusta) para z-score.
+- No imputar con 0.0. Mantener None/NaN.
+- Fail-fast: si faltan columnas críticas => error y log.
+
+FIN DEL DOCUMENTO

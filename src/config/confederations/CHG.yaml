@@ -1,0 +1,71 @@
+# KAIRI-SIO — Confederación Hidrográfica del Guadalquivir
+# Fuente: SAIH Guadalquivir · TEC_Formulas_Sc_Veto_v1.1
+# Estado: PRODUCCIÓN — valores validados Sprint 5 (2026-03-12)
+
+confederation:
+  code: CHG
+  name: Confederación Hidrográfica del Guadalquivir
+  status: production          # production | pilot | placeholder
+
+# ── Scoring weights (AHP — Saaty 1980) ───────────────────────────────────────
+weights:
+  w_f: 0.40
+  w_l: 0.30
+  w_t: 0.20
+  w_h: 0.10
+
+# ── Decision thresholds (GUM JCGM 100:2008) ──────────────────────────────────
+thresholds:
+  certificada: 0.85
+  degradada:   0.50
+
+# ── Latency (S_t) ─────────────────────────────────────────────────────────────
+# Intervalo nominal de transmisión SAIH Guadalquivir: 900s
+# Fuente: documentación técnica CHG
+latency:
+  breakpoints_s: [60, 300, 900]      # [t1, t2, LAT_CRITICAL_S]
+  scores:        [1.0, 0.7, 0.4, 0.1]
+  critical_s:    900                 # LAT_CRITICAL_S — convenience alias
+
+# ── Gap thresholds (WMO-No.168 / WMO-No.8) ───────────────────────────────────
+gaps:
+  warn: 0.10
+  fail: 0.30
+
+# ── Flatline (Nelson 1984 · ISO 7870-2:2013 · WMO-No.168) ────────────────────
+flatline:
+  k_hours:        8     # FLATLINE_K — consecutive identical values threshold
+  critical_hours: 48    # FLAT_CRITICAL_H — 2 ciclos nictemerales -> CRITICAL_FLAG
+
+# ── Drift (Page 1954 · Lucas & Saccucci 1990) ────────────────────────────────
+drift:
+  threshold: 3.0        # DRIFT_THRESH — UCL por percentil empírico
+
+# ── Spike detection ───────────────────────────────────────────────────────────
+spike:
+  h_level_m_per_h: 1.0  # SPIKE_THRESH — PROVISIONAL pendiente calibración CHG (F-02)
+
+# ── Physical bounds H_level por embalse ──────────────────────────────────────
+# Estado: PROVISIONAL — pendiente fichas técnicas oficiales CHG (T-02, T-03)
+embalses:
+  E32_VADOMOJON:
+    H_min: 0.0
+    H_max: 600.0        # PROVISIONAL
+    Q_min: 0.0
+    Q_max: 5000.0
+    P_min: 0.0
+    P_max: 300.0
+  E33_SRRA_BOYERA:
+    H_min: 0.0
+    H_max: 700.0        # PROVISIONAL — pendiente refinamiento T-03
+    Q_min: 0.0
+    Q_max: 5000.0
+    P_min: 0.0
+    P_max: 300.0
+  E37_BEMBEZAR:
+    H_min: 0.0
+    H_max: 600.0        # PROVISIONAL
+    Q_min: 0.0
+    Q_max: 5000.0
+    P_min: 0.0
+    P_max: 300.0

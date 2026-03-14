@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40"
+xmlns:u1="urn:schemas-microsoft-com:office:excel">
+ <Styles>
+ <Style ss:ID="Default" ss:Name="Normal">
+ <Alignment ss:Vertical="Bottom"/>
+ <Borders/>
+ <Font/>
+ <Interior/>
+ <NumberFormat/>
+ <Protection/>
+ </Style>
+ <Style ss:ID="BoldColumn">
+ <Font x:Family="Swiss" ss:Bold="1"/>
+ </Style>
+ <Style ss:ID="StringLiteral">
+ <NumberFormat ss:Format="@"/>
+ </Style>
+ <Style ss:ID="Decimal">
+ <NumberFormat ss:Format="0.0000"/>
+ </Style>
+ <Style ss:ID="Integer">
+ <NumberFormat ss:Format="0"/>
+ </Style>
+ <Style ss:ID="DateLiteral">
+ <NumberFormat ss:Format="mm/dd/yyyy;@"/>
+ </Style>
+ <Style ss:ID="Negrita"><Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/><Font x:Family="Swiss" ss:Size="14" ss:Bold="1"/></Style>
+</Styles>
+<Worksheet ss:Name="eGISPE: Embalse">
+<Table>
+<Row ss:Height="18">
+<Cell ss:MergeAcross="9" ss:StyleID="Negrita"><Data ss:Type="String">eGISPE: Embalse</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Código del embalse</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Nombre del embalse</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Coord. X ETRS89</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Coord. Y ETRS89</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Coord. X UTM ETRS89 Huso 30</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Coord. Y UTM ETRS89 Huso 30</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Coord. X Manual</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Coord. Y Manual</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Volumen útil (m3)</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Volumen total (m3)</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Superficie del embalse (has)</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Máximo nivel de avenida (m)</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Máximo nivel normal del embalse (m)</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">00002140</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">SIERRA BOYERA</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">-5,276225</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">38,274368</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">300.888</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">4.238.708</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">305511</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">4236767</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">40</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">40</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">552</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">500</Data></Cell>
+</Row>
+</Table>
+ </Worksheet>
+<Worksheet ss:Name="eGISPE: Municipios asociados al">
+<Table>
+<Row ss:Height="18">
+<Cell ss:MergeAcross="9" ss:StyleID="Negrita"><Data ss:Type="String">eGISPE: Municipios asociados al embalse</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Municipio</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">Belmez</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">Fuente Obejuna</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">Peñarroya-Pueblonuevo</Data></Cell>
+</Row>
+</Table>
+ </Worksheet>
+<Worksheet ss:Name="eGISPE: Hojas asociadas al emba">
+<Table>
+<Row ss:Height="18">
+<Cell ss:MergeAcross="9" ss:StyleID="Negrita"><Data ss:Type="String">eGISPE: Hojas asociadas al embalse</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Id. Hoja 1:50.000</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">0879</Data></Cell>
+</Row>
+</Table>
+ </Worksheet>
+<Worksheet ss:Name="eGISPE: Cauces asociados al emb">
+<Table>
+<Row ss:Height="18">
+<Cell ss:MergeAcross="9" ss:StyleID="Negrita"><Data ss:Type="String">eGISPE: Cauces asociados al embalse</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Cauce</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">RÍO  GUADIATO</Data></Cell>
+</Row>
+</Table>
+ </Worksheet>
+<Worksheet ss:Name="eGISPE: Presas Asociados">
+<Table>
+<Row ss:Height="18">
+<Cell ss:MergeAcross="9" ss:StyleID="Negrita"><Data ss:Type="String">eGISPE: Presas Asociadas</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Código del embalse</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Nombre del embalse</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Código de infraestructura</Data></Cell>
+<Cell ss:StyleID="BoldColumn"><Data ss:Type="String">Nombre de la presa</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">00002140</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">SIERRA BOYERA</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">05140011</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">SIERRA BOYERA</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">00002140</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">SIERRA BOYERA</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">05140015</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">SIERRA BOYERA (DIQUE DE COLLADO 1)</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">00002140</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">SIERRA BOYERA</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">05140016</Data></Cell>
+<Cell ss:StyleID="StringLiteral"><Data ss:Type="String">SIERRA BOYERA (DIQUE DE COLLADO 2)</Data></Cell>
+</Row>
+</Table>
+ </Worksheet>
+</Workbook>

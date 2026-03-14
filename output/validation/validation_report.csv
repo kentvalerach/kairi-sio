@@ -1,0 +1,12 @@
+embalse,error_type,n_errores,TP,FN,FP,recall,precision,F1
+E32 · Vado Mojón,SPIKE_SENSOR,3,3,0,-,1.0,-,-
+E32 · Vado Mojón,FLATLINE,4268,3252,1016,-,0.7619,-,-
+E32 · Vado Mojón,GAP_COMM,5,5,0,-,1.0,-,-
+E32 · Vado Mojón,ALL,4276,3260,1016,30774,0.7624,0.0958,0.1702
+E33 · Sierra Boyera,FLATLINE,6060,5335,725,-,0.8804,-,-
+E33 · Sierra Boyera,GAP_COMM,5,5,0,-,1.0,-,-
+E33 · Sierra Boyera,ALL,6065,5340,725,34829,0.8805,0.1329,0.231
+E37 · Bembézar,SPIKE_SENSOR,10,10,0,-,1.0,-,-
+E37 · Bembézar,FLATLINE,4258,2588,1670,-,0.6078,-,-
+E37 · Bembézar,GAP_COMM,5,5,0,-,1.0,-,-
+E37 · Bembézar,ALL,4273,2603,1670,37421,0.6092,0.065,0.1175
