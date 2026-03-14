@@ -1,0 +1,118 @@
+KAIRI-SIO PROPRIETARY SOFTWARE LICENSE
+Version 1.0 — March 2026
+
+Copyright (c) 2025–2026 Kent Valera Chirinos & Reymar
+All rights reserved.
+
+================================================================================
+TERMS AND CONDITIONS
+================================================================================
+
+1. DEFINITIONS
+
+   "Software" refers to the KAIRI-SIO Hydrological Signal Integrity Verification
+   System, including all source code, algorithms, scoring models, mathematical
+   formulations, configuration files, documentation, data pipelines, dashboards,
+   APIs, and any derivative works thereof.
+
+   "Authors" refers to Kent Valera Chirinos and Reymar, the original creators
+   and sole copyright holders of this Software.
+
+   "User" refers to any individual or legal entity that accesses, views, clones,
+   downloads, or otherwise interacts with this Software or its repository.
+
+2. GRANT OF RIGHTS
+
+   No rights are granted to any User by default. The Authors reserve all rights
+   to this Software under applicable copyright law and international treaties.
+
+   The Authors may, at their sole discretion, grant written permission for
+   specific uses of the Software. Such permission must be explicit, signed, and
+   provided in advance.
+
+3. RESTRICTIONS
+
+   Unless you have received explicit written authorization from the Authors,
+   you are strictly prohibited from:
+
+   a) Copying, reproducing, or duplicating the Software or any portion thereof,
+      in whole or in part, in any form or medium;
+
+   b) Modifying, adapting, translating, or creating derivative works based on
+      the Software or its underlying methodology;
+
+   c) Distributing, sublicensing, selling, renting, leasing, or transferring
+      the Software or any rights therein to any third party;
+
+   d) Using the Software, its algorithms, scoring models, or mathematical
+      formulations — including the composite integrity score S_c and its
+      sub-scores S_f, S_l, S_t, S_h — in any commercial, academic, research,
+      or institutional project without prior written consent;
+
+   e) Reverse engineering, decompiling, or disassembling any compiled portion
+      of the Software;
+
+   f) Removing, altering, or obscuring any copyright notice, license text,
+      author attribution, or proprietary legend contained in the Software;
+
+   g) Presenting, publishing, or submitting the Software or any derivative
+      thereof as your own work in any academic, professional, or public forum.
+
+4. VIEWING PERMISSION
+
+   Access to the public repository, if made available, is granted solely for
+   the purpose of reviewing and evaluating the Software. Such access does not
+   constitute a license to use, copy, or distribute the Software in any manner.
+
+5. ATTRIBUTION AND INTELLECTUAL PROPERTY
+
+   The composite scoring model, weighting methodology (AHP, Saaty 1980),
+   classification thresholds, and hydrological signal integrity framework
+   implemented in this Software constitute original intellectual work of the
+   Authors. Any unauthorized reproduction of these methodologies — even if
+   independently re-implemented — may constitute copyright infringement.
+
+6. ACADEMIC AND RESEARCH USE
+
+   Any use of the concepts, methodology, or results derived from this Software
+   in academic publications, theses, conference papers, or research reports
+   requires:
+
+   a) Explicit prior written consent from both Authors;
+   b) Proper citation of the Authors and this Software in all publications;
+   c) A co-authorship agreement if the Software's methodology constitutes a
+      substantial contribution to the published work.
+
+7. DISCLAIMER OF WARRANTIES
+
+   THE SOFTWARE IS PROVIDED "AS IS" FOR EVALUATION PURPOSES ONLY.
+   THE AUTHORS MAKE NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+   LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+   OR NON-INFRINGEMENT. THE AUTHORS SHALL NOT BE LIABLE FOR ANY DAMAGES
+   ARISING FROM THE USE OR INABILITY TO USE THIS SOFTWARE.
+
+8. TERMINATION
+
+   Any rights conditionally granted under this License terminate automatically
+   and immediately upon any breach of its terms by the User. Upon termination,
+   the User must destroy all copies of the Software in their possession.
+
+9. GOVERNING LAW
+
+   This License shall be governed by and construed in accordance with the laws
+   of the Kingdom of Spain, without regard to its conflict of law provisions.
+   Any disputes arising under this License shall be subject to the exclusive
+   jurisdiction of the courts of Spain.
+
+10. CONTACT
+
+    To request written authorization for any use of this Software, contact:
+
+    Kent Valera Chirinos
+    E-mail: kentvalerach@gmail.com
+    GitHub: https://github.com/kentvalerach
+
+================================================================================
+THIS SOFTWARE IS NOT OPEN SOURCE. ALL RIGHTS RESERVED.
+UNAUTHORIZED USE IS A VIOLATION OF COPYRIGHT LAW.
+================================================================================
