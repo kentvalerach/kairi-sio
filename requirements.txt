@@ -1,27 +1,5 @@
-# KAIRI-SIO — requirements.txt
-# Versiones fijadas para Streamlit Cloud (Python 3.12)
-
-# Core data
-pandas==2.2.3
-openpyxl>=3.1
+﻿pandas==3.0.1
+pyarrow==23.0.1
 numpy>=1.24
-scipy>=1.11
-matplotlib>=3.7
-seaborn>=0.12
-pyarrow>=13.0
-python-dotenv>=1.0
-
-# Testing
-pytest>=7.4
-
-# Streamlit + viz
 streamlit==1.41.1
 plotly==5.24.1
-
-# API
-fastapi==0.115.6
-uvicorn[standard]==0.32.1
-pydantic==2.10.3
-
-# HTTP (AEMET connector)
-requests>=2.31
