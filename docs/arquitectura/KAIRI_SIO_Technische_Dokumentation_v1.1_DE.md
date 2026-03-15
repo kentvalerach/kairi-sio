@@ -111,36 +111,36 @@ Datenvollständigkeitsschwellen werden direkt aus WMO-Nr.168 und WMO-Nr.8 abgele
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         KAIRI-SIO v1.1                               │
-│                                                                       │
+│                         KAIRI-SIO v1.1                              │
+│                                                                     │
 │  ┌──────────────┐    ┌──────────────┐    ┌──────────────────────┐   │
-│  │  INGESTION   │───▶│  BEWERTUNG   │───▶│  VETO / ENTSCHEIDUNG │   │
+│  │  INGESTION   │───▶│  BEWERTUNG   │───▶│ VETO / ENTSCHEIDUNG │   │
 │  │              │    │              │    │                      │   │
 │  │ saih_reader  │    │ s_f.py       │    │ decision_engine.py   │   │
 │  │ ebro_reader  │    │ s_l.py       │    │ CRITICAL_FLAG        │   │
 │  │ aemet_conn.  │    │ s_t.py       │    │ ZERT/DEGR/GESPERRT   │   │
 │  └──────────────┘    │ s_h.py       │    └──────────────────────┘   │
-│         │            │ scorer.py    │              │                 │
-│         ▼            └──────────────┘              ▼                 │
-│  ┌──────────────┐              │            ┌──────────────┐         │
-│  │  data/raw/   │              │            │  FORENSISCH  │         │
-│  │  data/curated│              │            │ forensic_log │         │
-│  │  data/analytic│             │            │ .jsonl Audit │         │
-│  └──────────────┘              │            └──────────────┘         │
-│                                ▼                                      │
-│                    ┌──────────────────────┐                          │
-│                    │    VALIDIERUNG       │                          │
-│                    │ ground_truth_builder │                          │
-│                    │ Einzugsgebietsver.   │                          │
-│                    └──────────────────────┘                          │
-│                                │                                      │
+│         │            │ scorer.py    │              │                │
+│         ▼            └──────────────┘              ▼                │
+│  ┌──────────────┐              │            ┌──────────────┐        │
+│  │  data/raw/   │              │            │  FORENSISCH  │        │
+│  │  data/curated│              │            │ forensic_log │        │
+│  │  data/analytic│             │            │ .jsonl Audit │        │
+│  └──────────────┘              │            └──────────────┘        │
+│                                ▼                                    │
+│                    ┌──────────────────────┐                         │
+│                    │    VALIDIERUNG       │                         │
+│                    │ ground_truth_builder │                         │
+│                    │ Einzugsgebietsver.   │                         │
+│                    └──────────────────────┘                         │
+│                                │                                    │
 │              ┌─────────────────┼──────────────────┐                 │
-│              ▼                 ▼                  ▼                  │
-│     ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
-│     │  REST-API    │  │  DASHBOARD   │  │  KONFIGURAT. │           │
-│     │  FastAPI     │  │  Streamlit   │  │  YAML/Gebiete│           │
-│     │  /score/*    │  │  dashboard   │  │  CHG/CHE/... │           │
-│     └──────────────┘  └──────────────┘  └──────────────┘           │
+│              ▼                 ▼                  ▼                 │
+│     ┌──────────────┐  ┌──────────────┐  ┌──────────────┐            │
+│     │  REST-API    │  │  DASHBOARD   │  │  KONFIGURAT. │            │
+│     │  FastAPI     │  │  Streamlit   │  │  YAML/Gebiete│            │
+│     │  /score/*    │  │  dashboard   │  │  CHG/CHE/... │            │
+│     └──────────────┘  └──────────────┘  └──────────────┘            │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
