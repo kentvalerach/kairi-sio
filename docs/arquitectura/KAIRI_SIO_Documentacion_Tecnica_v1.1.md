@@ -80,9 +80,9 @@ El umbral crítico `FLAT_CRITICAL_H = 48h` se justifica por tres argumentos comp
 - **Pérdida irreversible de información:** los eventos de variación significativa ($\Delta H > 0.05$ m/h) tienen duración media de 6–18h en el dataset SAIH Guadalquivir
 - **Completitud WMO:** 48h en una ventana de 10 días representa el 20% de datos inválidos, superando el umbral de aceptación del 10% establecido por WMO-No.168
 
-### 2.4 Detección de deriva — Detectores EWMA/CUSUM
+### 2.4 Detección de derivada — Detectores EWMA/CUSUM
 
-El detector de deriva $F_{drift}$ es formalmente equivalente a un detector CUSUM (Page, 1954) o EWMA (Lucas & Saccucci, 1990) de cambio de media. Calcula la deriva normalizada:
+El detector de derivada $F_{drift}$ es formalmente equivalente a un detector CUSUM (Page, 1954) o EWMA (Lucas & Saccucci, 1990) de cambio de media. Calcula la derivada normalizada:
 
 $$\text{drift} = \frac{|EMA_{6h} - EMA_{24h}|}{\sigma_{24h}}$$
 
