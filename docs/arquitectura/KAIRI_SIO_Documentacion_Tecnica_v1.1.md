@@ -1,7 +1,7 @@
 # KAIRI-SIO — Documentación Técnica del Sistema
 **Versión:** 1.1.0  
 **Fecha:** 2026-03-13  
-**Autores:** Reymar (especificación matemática) · Kent Valera Chirinos (implementación técnica)  
+**Autores:** Reymar (especificación matemática) · Kent Valera Chirinos (Desarrollador)  
 **Estado:** Producción piloto — CHG Guadalquivir + CHE Ebro
 
 ---
