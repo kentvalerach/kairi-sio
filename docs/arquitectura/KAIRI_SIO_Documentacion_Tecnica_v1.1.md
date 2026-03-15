@@ -111,36 +111,36 @@ Los umbrales de completitud de datos se derivan directamente de WMO-No.168 y WMO
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         KAIRI-SIO v1.1                               │
-│                                                                       │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────────────┐   │
-│  │   INGESTA    │───▶│   SCORING    │───▶│  VETO / DECISIÓN     │   │
-│  │              │    │              │    │                      │   │
-│  │ saih_reader  │    │ s_f.py       │    │ decision_engine.py   │   │
-│  │ ebro_reader  │    │ s_l.py       │    │ CRITICAL_FLAG        │   │
-│  │ aemet_conn.  │    │ s_t.py       │    │ CERT/DEGR/VETADA     │   │
-│  └──────────────┘    │ s_h.py       │    └──────────────────────┘   │
-│         │            │ scorer.py    │              │                 │
-│         ▼            └──────────────┘              ▼                 │
-│  ┌──────────────┐              │            ┌──────────────┐         │
-│  │  data/raw/   │              │            │   FORENSE    │         │
-│  │  data/curated│              │            │ forensic_log │         │
-│  │  data/analytic│             │            │ .jsonl audit │         │
-│  └──────────────┘              │            └──────────────┘         │
-│                                ▼                                      │
-│                    ┌──────────────────────┐                          │
-│                    │   VALIDACIÓN         │                          │
-│                    │ ground_truth_builder │                          │
-│                    │ intercuencas         │                          │
-│                    └──────────────────────┘                          │
-│                                │                                      │
+│                         KAIRI-SIO v1.1                              │
+│                                                                     │
+│  ┌──────────────┐    ┌──────────────┐     ┌──────────────────────┐  │
+│  │   INGESTA    │───▶ │  SCORING    │───▶│  VETO / DECISIÓN     │  │
+│  │              │    │              │     │                      │  │
+│  │ saih_reader  │    │ s_f.py       │     │ decision_engine.py   │  │
+│  │ ebro_reader  │    │ s_l.py       │     │ CRITICAL_FLAG        │  │
+│  │ aemet_conn.  │    │ s_t.py       │     │ CERT/DEGR/VETADA     │  │
+│  └──────────────┘    │ s_h.py       │     └──────────────────────┘  │
+│         │            │ scorer.py    │              │                │
+│         ▼            └──────────────┘              ▼                │
+│  ┌──────────────┐              │            ┌──────────────┐        │
+│  │  data/raw/   │              │            │   FORENSE    │        │
+│  │  data/curated│              │            │ forensic_log │        │
+│  │  data/analytic│             │            │ .jsonl audit │        │
+│  └──────────────┘              │            └──────────────┘        │
+│                                ▼                                    │
+│                    ┌──────────────────────┐                         │
+│                    │   VALIDACIÓN         │                         │
+│                    │ ground_truth_builder │                         │
+│                    │ intercuencas         │                         │
+│                    └──────────────────────┘                         │
+│                                │                                    │
 │              ┌─────────────────┼──────────────────┐                 │
-│              ▼                 ▼                  ▼                  │
-│     ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
-│     │  API REST    │  │  DASHBOARD   │  │  CONFIG      │           │
-│     │  FastAPI     │  │  Streamlit   │  │  YAML/cuencas│           │
-│     │  /score/*    │  │  dashboard   │  │  CHG/CHE/... │           │
-│     └──────────────┘  └──────────────┘  └──────────────┘           │
+│              ▼                 ▼                  ▼                 │
+│     ┌──────────────┐  ┌──────────────┐  ┌──────────────┐            │
+│     │  API REST    │  │  DASHBOARD   │  │  CONFIG      │            │ 
+│     │  FastAPI     │  │  Streamlit   │  │  YAML/cuencas│            │
+│     │  /score/*    │  │  dashboard   │  │  CHG/CHE/... │            │
+│     └──────────────┘  └──────────────┘  └──────────────┘            │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
